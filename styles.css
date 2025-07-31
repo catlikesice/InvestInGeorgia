@@ -1,0 +1,43 @@
+/* Container for sidebar + main content */
+.container {
+    display: flex;
+    max-width: 900px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+/* Sidebar styles */
+.sidebar {
+    width: 200px;
+    margin-right: 2rem;
+    position: sticky;
+    top: 2rem;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar li {
+    margin-bottom: 1rem;
+}
+
+.sidebar a {
+    color: #a33226;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.1rem;
+    transition: color 0.3s ease;
+}
+
+.sidebar a:hover,
+.sidebar a:focus {
+    color: #6d1f18;
+}
+
+/* Adjust main to take remaining space */
+main {
+    flex: 1;
+}
