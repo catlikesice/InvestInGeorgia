@@ -1,6 +1,7 @@
 /* Container for sidebar + main content */
 .container {
     display: flex;
+    flex-direction: column;
     max-width: 1100px;
     margin: 2.5rem auto;
     padding: 0 1.5rem;
@@ -10,28 +11,35 @@
     box-shadow: 0 8px 32px rgba(163, 50, 38, 0.07), 0 1.5px 6px rgba(0,0,0,0.04);
 }
 
-/* Sidebar styles */
+/* Sidebar styles - now a horizontal top bar */
 .sidebar {
-    width: 240px;
-    margin-right: 0;
-    position: sticky;
-    top: 2.5rem;
-    align-self: flex-start;
+    width: 100%;
+    margin: 0 0 2.2rem 0;
+    position: static;
+    align-self: stretch;
     background: #faf7f5;
     border-radius: 14px;
-    padding: 2rem 1.5rem;
+    padding: 1.2rem 1.5rem 1.2rem 1.5rem;
     box-shadow: 0 2px 12px rgba(163, 50, 38, 0.06);
-    min-height: 300px;
+    min-height: unset;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .sidebar ul {
     list-style: none;
     padding: 0;
     margin: 0;
+    display: flex;
+    gap: 2.5rem;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
 }
 
 .sidebar li {
-    margin-bottom: 1.6rem;
+    margin: 0;
 }
 
 .sidebar a {
@@ -42,7 +50,7 @@
     letter-spacing: 0.02em;
     transition: color 0.2s, background 0.2s, padding 0.2s;
     display: block;
-    padding: 0.3em 0.6em;
+    padding: 0.3em 0.8em;
     border-radius: 6px;
 }
 
@@ -157,6 +165,9 @@ footer {
         position: static;
         box-shadow: 0 1px 8px rgba(163, 50, 38, 0.07);
     }
+    .sidebar ul {
+        gap: 1.3rem;
+    }
 }
 
 @media (max-width: 700px) {
@@ -165,8 +176,5 @@ footer {
     .sidebar { font-size: 1rem; }
     .container { padding: 0; }
     main article { padding: 0.7rem 0.6rem; }
-}
-/* Adjust main to take remaining space */
-main {
-    flex: 1;
+    .sidebar ul { gap: 0.5rem; }
 }
