@@ -1,17 +1,27 @@
 /* Container for sidebar + main content */
 .container {
     display: flex;
-    max-width: 900px;
-    margin: 2rem auto;
-    padding: 0 1rem;
+    max-width: 1100px;
+    margin: 2.5rem auto;
+    padding: 0 1.5rem;
+    gap: 2.5rem;
+    background: #fff;
+    border-radius: 18px;
+    box-shadow: 0 8px 32px rgba(163, 50, 38, 0.07), 0 1.5px 6px rgba(0,0,0,0.04);
 }
 
 /* Sidebar styles */
 .sidebar {
-    width: 200px;
-    margin-right: 2rem;
+    width: 240px;
+    margin-right: 0;
     position: sticky;
-    top: 2rem;
+    top: 2.5rem;
+    align-self: flex-start;
+    background: #faf7f5;
+    border-radius: 14px;
+    padding: 2rem 1.5rem;
+    box-shadow: 0 2px 12px rgba(163, 50, 38, 0.06);
+    min-height: 300px;
 }
 
 .sidebar ul {
@@ -21,22 +31,141 @@
 }
 
 .sidebar li {
-    margin-bottom: 1rem;
+    margin-bottom: 1.6rem;
 }
 
 .sidebar a {
     color: #a33226;
     text-decoration: none;
-    font-weight: 600;
-    font-size: 1.1rem;
-    transition: color 0.3s ease;
+    font-weight: 700;
+    font-size: 1.15rem;
+    letter-spacing: 0.02em;
+    transition: color 0.2s, background 0.2s, padding 0.2s;
+    display: block;
+    padding: 0.3em 0.6em;
+    border-radius: 6px;
 }
 
 .sidebar a:hover,
 .sidebar a:focus {
-    color: #6d1f18;
+    color: #fff;
+    background: #a33226;
 }
 
+/* Adjust main to take remaining space */
+main {
+    flex: 1;
+    padding: 0.5rem 0 2rem 0;
+    min-width: 0;
+}
+
+/* Section and article improvements */
+main section {
+    margin-bottom: 3.5rem;
+}
+
+main h2 {
+    font-size: 2rem;
+    margin-bottom: 1.2rem;
+    color: #7e291a;
+    font-family: 'Georgia', serif;
+    letter-spacing: 0.01em;
+}
+
+main article {
+    margin-bottom: 1.6rem;
+    padding: 1.2rem 1.1rem;
+    background: #faf9f7;
+    border-radius: 10px;
+    box-shadow: 0 1px 4px rgba(163, 50, 38, 0.05);
+    transition: box-shadow 0.2s;
+}
+
+main article:hover {
+    box-shadow: 0 4px 18px rgba(163, 50, 38, 0.13);
+    background: #f5eeed;
+}
+
+main h3 {
+    font-size: 1.25rem;
+    margin-bottom: 0.3rem;
+    color: #28120b;
+    font-family: 'Georgia', serif;
+    font-weight: 700;
+    letter-spacing: 0.01em;
+}
+
+main p {
+    margin: 0;
+    color: #3e2a1d;
+    font-size: 1.06rem;
+    line-height: 1.6;
+}
+
+/* Typography and global tweaks */
+body {
+    background: #f4efeb;
+    font-family: 'Segoe UI', 'Georgia', serif;
+    color: #291812;
+    margin: 0;
+    padding: 0;
+    font-size: 17px;
+}
+
+header {
+    text-align: center;
+    margin: 2.5rem 0 2rem 0;
+}
+
+header h1 {
+    font-family: 'Georgia', serif;
+    font-size: 2.6rem;
+    margin: 0 0 0.8rem 0;
+    color: #28120b;
+    letter-spacing: 0.03em;
+    font-weight: bold;
+}
+
+header p {
+    color: #5e3c2b;
+    font-size: 1.16rem;
+    margin: 0;
+    font-family: 'Georgia', serif;
+}
+
+footer {
+    text-align: center;
+    margin: 3rem 0 1.2rem 0;
+    color: #988271;
+    font-size: 1rem;
+    font-family: 'Georgia', serif;
+    letter-spacing: 0.01em;
+}
+
+@media (max-width: 950px) {
+    .container {
+        flex-direction: column;
+        max-width: 98vw;
+        gap: 0.5rem;
+        padding: 0 0.5rem;
+    }
+    .sidebar {
+        width: 98%;
+        margin: 0 auto 1.5rem auto;
+        min-height: unset;
+        padding: 1.2rem 1rem;
+        position: static;
+        box-shadow: 0 1px 8px rgba(163, 50, 38, 0.07);
+    }
+}
+
+@media (max-width: 700px) {
+    header h1 { font-size: 1.6rem; }
+    main h2 { font-size: 1.2rem; }
+    .sidebar { font-size: 1rem; }
+    .container { padding: 0; }
+    main article { padding: 0.7rem 0.6rem; }
+}
 /* Adjust main to take remaining space */
 main {
     flex: 1;
