@@ -41,6 +41,7 @@
 
 .sidebar li {
     margin: 0;
+    position: relative; /* Needed for dropdown */
 }
 
 .sidebar a {
@@ -61,14 +62,67 @@
     background: #a33226;
 }
 
-/* Adjust main to take remaining space */
+/* Dropdown menu styles */
+.dropdown {
+    position: relative;
+}
+
+.dropdown-toggle::after {
+    content: " ▼";
+    font-size: 0.7em;
+    color: #a33226;
+    margin-left: 0.25em;
+    vertical-align: middle;
+}
+
+.dropdown-menu {
+    position: absolute;
+    left: 0;
+    top: 100%;
+    min-width: 180px;
+    background: #f7ece6;
+    border: 1px solid #ecd2c0;
+    border-radius: 8px;
+    box-shadow: 0 4px 16px rgba(163, 50, 38, 0.09);
+    padding: 0.5em 0;
+    display: none;
+    z-index: 100;
+    flex-direction: column;
+    gap: 0;
+}
+
+.dropdown-menu li {
+    margin: 0;
+    width: 100%;
+}
+
+.dropdown-menu a {
+    font-size: 1rem;
+    font-weight: 500;
+    color: #693122;
+    background: transparent;
+    padding: 0.4em 1.3em;
+    border-radius: 0;
+    transition: background 0.15s, color 0.15s;
+}
+
+.dropdown-menu a:hover,
+.dropdown-menu a:focus {
+    background: #a33226;
+    color: #fff;
+}
+
+.dropdown:hover > .dropdown-menu,
+.dropdown:focus-within > .dropdown-menu {
+    display: flex;
+}
+
 main {
     flex: 1;
     padding: 0.5rem 0 2rem 0;
     min-width: 0;
 }
 
-/* Section and article improvements */
 main section {
     margin-bottom: 3.5rem;
 }
@@ -165,6 +219,10 @@ footer {
     .sidebar ul {
         gap: 1.3rem;
     }
+    .dropdown-menu {
+        min-width: 130px;
+        font-size: 0.9rem;
+    }
 }
 
 @media (max-width: 700px) {
@@ -174,4 +232,5 @@ footer {
     .container { padding: 0; }
     main article { padding: 0.7rem 0.6rem; }
     .sidebar ul { gap: 0.5rem; }
+    .dropdown-menu { min-width: 100px; font-size: 0.88rem; }
 }
