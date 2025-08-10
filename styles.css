@@ -44,25 +44,25 @@
     position: relative; /* Needed for dropdown */
 }
 
+/* Dropdown menu should be hidden by default */
 .dropdown-menu {
+    display: none;
     position: absolute;
     left: 0;
     top: 100%;
     min-width: 180px;
-    background: #f7ece6;
+    background: #fff;
     border: 1px solid #ecd2c0;
-    border-radius: 8px;
+    border-radius: 12px;
     box-shadow: 0 4px 16px rgba(163, 50, 38, 0.09);
     padding: 0.5em 0;
-    display: none;
     z-index: 100;
-    flex-direction: column;
-    gap: 0;
 }
 
 .dropdown:hover > .dropdown-menu,
 .dropdown:focus-within > .dropdown-menu {
     display: flex;
+    flex-direction: column;
 }
 
 .sidebar a {
