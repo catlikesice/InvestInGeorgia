@@ -97,6 +97,7 @@
 }
 
 .dropdown-menu {
+    display: none;
     position: absolute;
     left: 0;
     top: 100%;
@@ -115,7 +116,8 @@
 /* Show dropdown only when hovering the parent li, not the whole sidebar */
 .dropdown:hover > .dropdown-menu,
 .dropdown:focus-within > .dropdown-menu {
-    display: flex;
+    display: flex; /* Or block, but flex is fine for vertical menus */
+    flex-direction: column;
 }
 
 .dropdown-menu li {
