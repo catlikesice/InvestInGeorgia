@@ -97,7 +97,7 @@
 }
 
 .dropdown-menu {
-    display: none;
+     display: none !important;
     position: absolute;
     left: 0;
     top: 100%;
@@ -143,7 +143,7 @@
 
 .dropdown:hover > .dropdown-menu,
 .dropdown:focus-within > .dropdown-menu {
-    display: flex;
+    display: flex !important;
 }
 
 main {
